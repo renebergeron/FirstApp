@@ -1,0 +1,41 @@
+**/*.pbxuser
+**/*.perspectivev3
+**/*.xcuserstate
+**/*.xcbkptlist
+**/xcuserdata/*
+**/*.xccheckout
+**/.DS_Store
+**/test-reports
+**/*.gcno
+**/*.gcda
+**/*.xcscmblueprint
+
+##########
+# Fastlane
+##########
+
+# fastlane temporary profiling data
+fastlane/report.xml
+
+# deliver temporary error output
+fastlane/Error*.png
+
+# deliver temporary preview output
+fastlane/Preview.html
+
+# snapshot generated screenshots
+fastlane/screenshots/*/*-portrait.png
+fastlane/screenshots/*/*-landscape.png
+fastlane/screenshots/screenshots.html
+
+# frameit generated screenshots
+fastlane/screenshots/*/*-portrait_framed.png
+fastlane/screenshots/*/*-landscape_framed.png
+
+test_output/
+fastlane/build
+XCKSX48UY9.cer
+InHouse_com.pagesjaunes.ad4screen.mobileprovision
+PagesJaunes/build
+
+codesigndoc_exports*
