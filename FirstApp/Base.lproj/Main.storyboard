@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CIN-Nb-Cit">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5mw-qX-eH0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -292,12 +292,30 @@
             </objects>
             <point key="canvasLocation" x="1000.8" y="53.523238380809602"/>
         </scene>
+        <!--Login-->
+        <scene sceneID="DMM-fd-i5e">
+            <objects>
+                <viewController id="5mw-qX-eH0" customClass="Login" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0l5-Zq-nsK"/>
+                        <viewControllerLayoutGuide type="bottom" id="aRO-gd-lB1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mnb-nL-Gi0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fpD-hg-Bqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1871" y="34"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="DqF-Sx-FRt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CIN-Nb-Cit" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="nav" automaticallyAdjustsScrollViewInsets="NO" id="CIN-Nb-Cit" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cKD-kV-BfF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cKD-kV-BfF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
