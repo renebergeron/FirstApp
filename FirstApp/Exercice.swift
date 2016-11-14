@@ -64,7 +64,13 @@ class Exercice : UIViewController, UITextFieldDelegate {
 
         if let result = enteredNumber.text, result != "" {
             if Int(result) == calcule.reponse {
-                alert(title: "Excelent", message: "\(calcule.reponse) est bien le resultat!")
+                //alert(title: "Excelent", message: "\(calcule.reponse) est bien le resultat!")
+                persisteNumberOfVictory()
+                let victory  = VictoryView()
+                victory.alpha = 0
+                self.view.addSubview(victory)
+                UIView.animate(withDuration: TimeInterval(1.0), animations: {victory.alpha = 1})
+                //UIView.animate(withDuration: TimeInterval(1.0), animations: {victory.removeFromSuperview()})
             } else {
                 alert(title: "Looser", message: "Mauvaise reponse")
             }
@@ -120,7 +126,10 @@ class Exercice : UIViewController, UITextFieldDelegate {
         if autoState {
             if let result = sender.text, result != ""{
                 if Int(result) == 8 {
-                    alert(title: "Bravo", message: "Bravo champion!")
+                    //alert(title: "Bravo", message: "Bravo champion!")
+                    let victory  = VictoryView()
+                    self.view.addSubview(victory)
+                    
                 } else {
                     alert(title: "Pas la bonne valeur", message: "Mauvais choix => \(result)")
                     
@@ -128,6 +137,27 @@ class Exercice : UIViewController, UITextFieldDelegate {
             }
         }
         return true
+    }
+    
+    func persisteNumberOfVictory() {
+        
+        let backGroundQueue = DispatchQueue(label: "traitementLong", qos: .background, target: nil)
+        
+        backGroundQueue.async {
+            for delay in 0 ..< 100000 {
+                print("Le compteur delay est => \(delay)")
+            }
+            
+            var nbrVictory = UserDefaults.standard.integer(forKey: "NOMBRE_VICTORIES")
+            
+            nbrVictory += 1
+            
+            UserDefaults.standard.set(nbrVictory, forKey: "NOMBRE_VICTORIES")
+            
+            UserDefaults.standard.synchronize()
+            
+            print("Le nombre de victoires est passé à \(UserDefaults.standard.integer(forKey: "NOMBRE_VICTORIES"))")
+        }
     }
     
     func longSliderClick(sender : UILongPressGestureRecognizer){
@@ -160,6 +190,5 @@ class Exercice : UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
 }
 
